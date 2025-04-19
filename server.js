@@ -12,6 +12,9 @@ app.use(express.json()); // for parsing application/json
 // MongoDB connection
 connectDB()
 
+app.get('/', (req, res) => {
+  res.send('Hello, node-express app!');
+});
 
 app.use('/api', authRoutes); // now /api/register is available
 app.use('/api', userRoutes); // now /api/users is available
